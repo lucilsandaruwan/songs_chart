@@ -1,12 +1,19 @@
 # this file is used to keep applicaton configs
-import views.str_decorators as sd
-import configs.language as lang
 
 CONFIG = {
     "lang": "en"
     ,"csv_file_path": "data/charts.csv"
     ,"song_len": 46
     ,"artist_len": 46
+    ,"str_styles": {
+        "heaer": '\033[95m'
+        ,"blue": '\033[94m'
+        ,"green": '\033[92m'
+        ,"warning": '\033[93m'
+        ,"fail": '\033[91m'
+        ,"bold": '\033[1m'
+        ,"underline": '\033[4m'
+    }
 }
 
 def get_config(key):
@@ -18,5 +25,6 @@ def get_config(key):
     try:
         return CONFIG[key]
     except:
-        print(sd.error(lang.str_by_lang_key("meta_key_error").format(key)))
+        print("'\033[91m'"+ "The config key '{}', is not available in /configs/meta.py.".format(key)
+        ,"There can be errors in data where using this key\033[0m.\n" )
         
