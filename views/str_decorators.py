@@ -26,7 +26,7 @@ def bold(msg):
     return format(msg, "bold")
 
 def blue(msg):
-    return format(msg, blue)
+    return format(msg, "blue")
 
 def format(msg, style):
     stls = m.get_config("str_styles")
